@@ -12,3 +12,7 @@ __pycache__/
 # OS Generated Files
 .DS_Store
 Thumbs.db
+
+# IDE / Agent
+.vscode/
+.gemini/
