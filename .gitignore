@@ -1,0 +1,14 @@
+# Local API Keys
+api_key.txt
+
+# Executables
+*.exe
+weather_app.exe
+
+# Local Data / Caches
+history.json
+__pycache__/
+
+# OS Generated Files
+.DS_Store
+Thumbs.db

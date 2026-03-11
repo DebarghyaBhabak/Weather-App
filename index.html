@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Weather Map</title>
+    <!-- CSS & Fonts -->
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Leaflet JS for Map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+</head>
+<body id="themeBody" class="theme-day">
+
+    <!-- Background animations container -->
+    <div id="skyAnimations" class="sky-animations">
+        <div id="celestialBody" class="sun"></div>
+        <div class="clouds-layer">
+            <div id="cloud1" class="cloud" style="top: 10%; animation-duration: 40s;"></div>
+            <div id="cloud2" class="cloud" style="top: 30%; animation-duration: 60s; animation-delay: -10s;"></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>Weather Forecast</h1>
+        
+        <div class="search-box">
+            <input type="text" id="cityInput" placeholder="Enter city name..." autocomplete="off">
+            <button id="searchBtn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+            </button>
+        </div>
+
+        <div id="loading" class="hidden">Loading data...</div>
+        <div id="error" class="hidden error-msg"></div>
+
+        <div id="weatherCard" class="glass-card hidden">
+            <h2 id="cityName">--</h2>
+            <div class="weather-info">
+                <span class="temp" id="temperature">--°C</span>
+                <span class="condition" id="condition">--</span>
+            </div>
+            
+            <div id="map" class="map-container"></div>
+
+            <div class="details">
+                <div class="detail-item">
+                    <span>Humidity</span>
+                    <strong id="humidity">--%</strong>
+                </div>
+                <div class="detail-item">
+                    <span>Coordinates</span>
+                    <strong id="coords">--</strong>
+                </div>
+            </div>
+
+            <!-- New Extended Data Section -->
+            <div id="extendedDataBtn" class="extend-btn">
+                <span>More Details</span>
+                <svg viewBox="0 0 24 24" fill="none" class="chevron"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </div>
+            
+            <div id="extendedDetails" class="extended-details hidden">
+                <div class="detail-item">
+                    <span>Feels Like</span>
+                    <strong id="feelsLike">--°C</strong>
+                </div>
+                <div class="detail-item">
+                    <span>Wind Speed</span>
+                    <strong id="windSpeed">-- m/s</strong>
+                </div>
+                <div class="detail-item">
+                    <span>Pressure</span>
+                    <strong id="pressure">-- hPa</strong>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="history-section">
+            <h3>Recent Searches</h3>
+            <div id="historyList" class="history-list">
+                <!-- History items injected here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
