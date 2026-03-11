@@ -16,7 +16,8 @@ You need the following installed:
 1. **C++ Compiler** (like `g++` via MinGW)
 2. **Python 3.x**
 3. **Curl** (Usually pre-installed on modern Windows/macOS/Linux)
-4. An **OpenWeatherMap API Key** (Free tier works perfectly)
+4. **Nlohmann JSON** (`json.hpp` is included in this repository)
+5. An **OpenWeatherMap API Key** (Free tier works perfectly)
 
 ## 🚀 Setup & Installation
 
